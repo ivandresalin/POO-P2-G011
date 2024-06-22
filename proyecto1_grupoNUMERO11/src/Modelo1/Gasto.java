@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Modelo1;
+package modelo1;
 
 /**
  *
  * @author ivand
  */
 public class Gasto extends TransaccionFinanciera {
-    private Categoria categoria;
-    private String repeticion;
+    public Categoria categoria;
+    public String repeticion;
     
     public Gasto(String codigo, String descripcion, double valor, String fechaInicio, String fechaFin, Categoria categoria, String repeticion) {
         super(codigo, descripcion, valor, fechaInicio, fechaFin);

@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Modelo1;
+package modelo1;
 
-import Modelo1.entidades.Persona;
+import modelo1.entidades.Persona;
 
 /**
  *
