@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo2;
-import modelo1.entidades.*;
+import entidades.Banco;
 /**
  *
  * @author ivand
@@ -14,8 +14,8 @@ public class CuentaBancaria extends ProcesoBancario{
     private double saldo;
 
     // Constructor que llama al constructor de la clase padre
-    public CuentaBancaria(String codigo, Banco banco, String fechaApertura, double interesPorMes, String fechaCierre, TipoCuenta tipoCuenta, String numero, double saldo) {
-        super(codigo, banco, fechaApertura, interesPorMes, fechaCierre);
+    public CuentaBancaria( Banco banco, String fechaApertura, double interesPorMes, String fechaCierre, TipoCuenta tipoCuenta, String numero, double saldo) {
+        super( banco, fechaApertura, interesPorMes, fechaCierre);
         this.tipoCuenta = tipoCuenta;
         this.numero = numero;
         this.saldo = saldo;
@@ -46,5 +46,11 @@ public class CuentaBancaria extends ProcesoBancario{
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    @Override
+    public String mostrarInformacion() {
+       return String.format("%-10s %-30s %-15s %-15s %-15s %n",codigo,banco.getNombre(),tipoCuenta ,numero,saldo,fechaCierre);
+        
     }
 }

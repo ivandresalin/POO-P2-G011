@@ -3,34 +3,41 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo2;
-import modelo1.entidades.*;
+import entidades.Banco;
+import modelo.TransaccionFinanciera;
 
 /**
  *
  * @author ivand
  */
-public class ProcesoBancario {
-    private String codigo;
-    private Banco banco;
-    private String fechaApertura;
-    private double interesPorMes;
-    private String fechaCierre;
-
+public abstract class ProcesoBancario {
+    protected static int contador=1;
+    protected int  codigo;
+    protected Banco banco;
+    protected String fechaApertura;
+    protected double interesPorMes;
+    protected String fechaCierre;
+    
+    public static void incrementarCodigo(){
+        contador++;
+    }
     // Constructor
-    public ProcesoBancario(String codigo, Banco banco, String fechaApertura, double interesPorMes, String fechaCierre) {
-        this.codigo = codigo;
+    public ProcesoBancario(Banco banco, String fechaApertura, double interesPorMes, String fechaCierre) {
+        
+        this.codigo = contador;
         this.banco = banco;
         this.fechaApertura = fechaApertura;
         this.interesPorMes = interesPorMes;
         this.fechaCierre = fechaCierre;
+        incrementarCodigo();
     }
 
     // Getters y setters para codigo
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -69,4 +76,12 @@ public class ProcesoBancario {
     public void setFechaCierre(String fechaCierre) {
         this.fechaCierre = fechaCierre;
     }
+    
+    public String mostrarInformacion(){
+        return "";
+    } 
+        
+        
+    
+    
 }

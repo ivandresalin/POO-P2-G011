@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo2;
-import modelo1.entidades.Banco;
+import entidades.Banco;
 /**
  *
  * @author ivand
@@ -12,8 +12,8 @@ public class Inversion extends ProcesoBancario{
     private double cantidad;
 
     // Constructor que llama al constructor de la clase padre
-    public Inversion(String codigo, Banco banco, String fechaApertura, double interesPorMes, String fechaCierre, double cantidad) {
-        super(codigo, banco, fechaApertura, interesPorMes, fechaCierre);
+    public Inversion( Banco banco, String fechaApertura, double interesPorMes, String fechaCierre, double cantidad) {
+        super(banco, fechaApertura, interesPorMes, fechaCierre);
         this.cantidad = cantidad;
     }
 
@@ -24,5 +24,11 @@ public class Inversion extends ProcesoBancario{
 
     public void setCantidad(double cantidad) {
         this.cantidad = cantidad;
+    }
+
+    @Override
+    public String mostrarInformacion() {
+        return String.format("%-10s %-30s %-15s %-15s %-15s %-15s %n",codigo,banco.getNombre(), fechaApertura,cantidad, interesPorMes,fechaCierre);
+        
     }
 }

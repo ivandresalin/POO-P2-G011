@@ -9,6 +9,6 @@ package modelo2;
  * @author ivand
  */
 public enum TipoCuenta {
-    Ahorro,
-    Corriente,
+    AHORRO,
+    CORRIENTE
 }
